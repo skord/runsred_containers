@@ -1,0 +1,15 @@
+server {
+  listen 18080 default_server backlog=2048;
+
+  root /home/app/world_map;
+  index index.html;
+
+# Make site accessible from http://localhost/
+  server_name _;
+  location / {
+    try_files $uri $uri/ /index.html;
+  }
+
+
+}
+
